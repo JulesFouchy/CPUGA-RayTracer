@@ -4,3 +4,6 @@
 [submodule "Cool/Log"]
 	path = Cool/Log
 	url = https://github.com/CoolOpenGL/Log
+[submodule "Cool/ExportImage"]
+	path = Cool/ExportImage
+	url = https://github.com/CoolOpenGL/ExportImage
