@@ -3,8 +3,10 @@
 
 using namespace Cool;
 
+#include <c3ga/c3gaTools.hpp>
+
 int main() {
-	Log::Initialize();
+	auto pt = c3ga::point<double>(1., 0.5, 0.1);
 	//
 	Image image(1280, 720);
 	for (Pixel px : image) {

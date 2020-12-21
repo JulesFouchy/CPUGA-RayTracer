@@ -35,9 +35,15 @@ include("${PATH_TO_COOL}/File/IncludeMe.cmake")
 include("${PATH_TO_COOL}/CMake-Helpers/VS_helpers.cmake")
 VS_RegisterFiles("${MY_SOURCES}")
 
+# Include garamon-c3ga
+file(GLOB_RECURSE C3GA_SOURCES "lib/garamon-c3ga/src/c3ga/*")
+add_library(C3GA STATIC ${C3GA_SOURCES})
+
 # Set include directories
 include_directories(
     src
+    lib/eigen-3.3.9
+    lib/garamon-c3ga/src
 )
 
 # /////////////////////////////////////////////////////////////////////////////
