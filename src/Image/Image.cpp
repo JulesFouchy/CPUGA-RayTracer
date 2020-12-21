@@ -1,6 +1,6 @@
 #include "Image.h"
 
-//#include <stb_image/stb_image_write.h>
+#include "Cool/ExportImage/ExportPNG.h"
 
 Image::Image(unsigned int width, unsigned int height)
 	: m_width(width), m_height(height), m_aspectRatio(static_cast<float>(width) / static_cast<float>(height))
@@ -9,8 +9,7 @@ Image::Image(unsigned int width, unsigned int height)
 }
 
 void Image::saveAs(const char* filepath) {
-	//stbi_flip_vertically_on_write(1);
-	//stbi_write_png(filepath, m_width, m_height, 4, m_pixelColors.data(), 0);
+	Cool::ExportPng(filepath, m_width, m_height, m_pixelColors.data());
 }
 
 ImageIterator Image::begin() {
