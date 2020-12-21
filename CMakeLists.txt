@@ -17,6 +17,7 @@ file(GLOB_RECURSE MY_SOURCES
     src/*
     ${PATH_TO_COOL}/Log/src/*
     ${PATH_TO_COOL}/ExportImage/src/*
+    ${PATH_TO_COOL}/File/src/*
 )
 
 # Create target executable
@@ -28,6 +29,7 @@ set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD ${CXX_STANDARD})
 # Include Cool
 include("${PATH_TO_COOL}/Log/IncludeMe.cmake")
 include("${PATH_TO_COOL}/ExportImage/IncludeMe.cmake")
+include("${PATH_TO_COOL}/File/IncludeMe.cmake")
 
 # Recreate the folder architecture inside the Visual Studio solution (might work for other IDEs as well)
 include("${PATH_TO_COOL}/CMake-Helpers/VS_helpers.cmake")

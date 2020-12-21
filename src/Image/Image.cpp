@@ -1,6 +1,7 @@
 #include "Image.h"
 
 #include "Cool/ExportImage/ExportPNG.h"
+#include "Cool/File/File.h"
 
 Image::Image(unsigned int width, unsigned int height)
 	: m_width(width), m_height(height), m_aspectRatio(static_cast<float>(width) / static_cast<float>(height))
@@ -9,7 +10,8 @@ Image::Image(unsigned int width, unsigned int height)
 }
 
 void Image::saveAs(const char* filepath) {
-	Cool::ExportPng(filepath, m_width, m_height, m_pixelColors.data());
+	Cool::File::CreateFoldersForFileIfDoesntExist(filepath);
+	Cool::ExportImage::AsPNG(filepath, m_width, m_height, m_pixelColors.data());
 }
 
 ImageIterator Image::begin() {
