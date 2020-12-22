@@ -18,6 +18,14 @@ public:
 	/// In the range [-1, 1]
 	/// Axis pointing up
 	float y();
+	/// <summary>
+	/// Position expressed in number of pixels, ranging from 0 to width-1
+	/// </summary>
+	inline int xInt() { return m_x; }
+	/// <summary>
+	/// Position expressed in number of pixels, ranging from 0 to height-1
+	/// </summary>
+	inline int yInt() { return m_y; }
 
 private:
 	Image& m_image;
