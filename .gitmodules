@@ -10,3 +10,9 @@
 [submodule "Cool/File"]
 	path = Cool/File
 	url = https://github.com/CoolOpenGL/File
+[submodule "Cool/Camera"]
+	path = Cool/Camera
+	url = https://github.com/CoolOpenGL/Camera
+[submodule "Cool/App"]
+	path = Cool/App
+	url = https://github.com/CoolOpenGL/App
