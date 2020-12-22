@@ -1,17 +1,21 @@
-
 #include "Image/Image.h"
 #include <Cool/Camera/Camera.h>
+#include <Cool/App/RenderState.h>
+#include <c3ga/c3gaTools.hpp>
 
 using namespace Cool;
 
-#include <c3ga/c3gaTools.hpp>
 
 int main() {
+	// Init
 	Log::Initialize();
-	auto pt = c3ga::point<double>(1., 0.5, 0.1);
-	//
-	Camera camera;
+	RenderState::SubscribeToSizeChanges([]() {Log::Info("The size is now {} {}", RenderState::Size().width(), RenderState::Size().height()); });
+	// Create image
 	Image image(200, 200);
+	RenderState::setExportSize(image.width(), image.height());
+	RenderState::setIsExporting(true);
+	// Drawing
+	Camera camera;
 	for (Pixel px : image) {
 		Ray ray = camera.rayThroughPixel({ px.xInt(), px.yInt() });
 		if (ray.direction().y > 0)
@@ -19,5 +23,6 @@ int main() {
 		else
 			px.color().set(0.95f, 0.7f, 0.8f);
 	}
+	// Save
 	image.saveAs("out/test.png");
 }
