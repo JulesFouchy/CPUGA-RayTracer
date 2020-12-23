@@ -16,3 +16,6 @@
 [submodule "Cool/App"]
 	path = Cool/App
 	url = https://github.com/CoolOpenGL/App
+[submodule "Cool/Image"]
+	path = Cool/Image
+	url = https://github.com/CoolOpenGL/Image

@@ -1,4 +1,4 @@
-#include "Image/Image.h"
+#include <Cool/Image/Image.h>
 #include <Cool/Camera/Camera.h>
 #include <Cool/App/RenderState.h>
 #include <c3ga/c3gaTools.hpp>
