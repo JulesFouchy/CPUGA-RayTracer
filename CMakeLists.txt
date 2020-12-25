@@ -72,6 +72,5 @@ include_directories(
 
 # More infos on precompiled headers : https://www.youtube.com/watch?v=eSI4wctZUto&ab_channel=TheCherno
 target_precompile_headers(${PROJECT_NAME} PRIVATE
-    # put things like <string> here
-    # <memory>
+    <c3ga/c3gaTools.hpp>
 )
