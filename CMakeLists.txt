@@ -14,6 +14,8 @@ set(COOL_MODULES
     File
     App
     Camera
+    OpenGL
+    Renderer_Fullscreen
 )
 
 # Set the path where all the Cool modules are stored. It is required by all the Cool IncludeMe.cmake files
@@ -30,12 +32,12 @@ file(GLOB_RECURSE MY_SOURCES
     src/*
     ${COOL_SOURCES}
 )
-#file(GLOB_RECURSE MY_SHADERS shaders/*)
+file(GLOB_RECURSE MY_SHADERS shaders/*)
 
 # Create target executable
 add_executable(${PROJECT_NAME}
     ${MY_SOURCES}
-    #${MY_SHADERS} # we include them here only so that they will appear in the solution explorer of Visual Studio
+    ${MY_SHADERS} # we include them here only so that they will appear in the solution explorer of Visual Studio
 )
 set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD ${CXX_STANDARD})
 
@@ -51,11 +53,11 @@ endforeach()
 # Recreate the folder architecture inside the Visual Studio solution (might work for other IDEs as well)
 include("${PATH_TO_COOL}/CMake-Helpers/VS_helpers.cmake")
 VS_RegisterFiles("${MY_SOURCES}")
-#VS_RegisterFiles("${MY_SHADERS}")
+VS_RegisterFiles("${MY_SHADERS}")
 
 # Add a post build operation to copy shaders to the output folder (where the executable is created)
-#include("${PATH_TO_COOL}/CMake-Helpers/copy_folder_to_the_output_folder.cmake")
-#copy_folder_to_the_output_folder("shaders")
+include("${PATH_TO_COOL}/CMake-Helpers/copy_folder_to_the_output_folder.cmake")
+copy_folder_to_the_output_folder("shaders")
 
 # Set include directories
 include_directories(

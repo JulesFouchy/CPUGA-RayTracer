@@ -19,3 +19,9 @@
 [submodule "Cool/Image"]
 	path = Cool/Image
 	url = https://github.com/CoolOpenGL/Image
+[submodule "Cool/OpenGL"]
+	path = Cool/OpenGL
+	url = https://github.com/CoolOpenGL/OpenGL
+[submodule "Cool/Renderer_Fullscreen"]
+	path = Cool/Renderer_Fullscreen
+	url = https://github.com/CoolOpenGL/Renderer_Fullscreen
