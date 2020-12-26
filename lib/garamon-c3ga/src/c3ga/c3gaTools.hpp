@@ -99,7 +99,7 @@ namespace c3ga{
     /// \param pt2 : the output point 2.
     template<typename T>
     void extractPairPoint(const c3ga::Mvec<T> &pairPoint, c3ga::Mvec<T> &pt1, c3ga::Mvec<T> &pt2){
-        c3ga::Mvec<T> denominator = - c3ga::ei<double>() | pairPoint;
+        c3ga::Mvec<T> denominator = - c3ga::ei<T>() | pairPoint;
         pt1 = (pairPoint + sqrt(fabs(pairPoint | pairPoint)) ) / denominator;
         pt2 = (pairPoint - sqrt(fabs(pairPoint | pairPoint)) ) / denominator;
 

@@ -21,12 +21,15 @@ public:
 
 private:
 	void render();
-	void computeImage();
+	void computeImageGA();
+	void computeImageLA();
 
 private:
-	Image m_image;
+	Image m_imageGA;
+	Texture m_textureGA;
+	Image m_imageLA;
+	Texture m_textureLA;
 	Camera m_camera;
-	Texture m_texture;
 	Shader m_displayTextureShader;
 	Renderer_Fullscreen m_renderer;
 };
