@@ -17,9 +17,11 @@ public:
 
 	void update() override;
 	void ImGuiWindows() override;
+	void onEvent(const SDL_Event& e) override;
 
 private:
 	void render();
+	void computeImage();
 
 private:
 	Image m_image;
