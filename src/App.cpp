@@ -39,9 +39,9 @@ void App::update() {
 }
 
 void App::computeImageGA() {
-	float sphereRadius = 2.f;
+	float sphereRadius = 2.5f;
 	auto sphereCenter = c3ga::point<float>(0, 0, 0);
-	auto dualSphere = c3ga::dualSphere<float>(0, 0, 0, sphereRadius * 2.f);
+	auto dualSphere = c3ga::dualSphere<float>(0, 0, 0, sphereRadius * sphereRadius);
 	auto lightDir = (
 		-1. * c3ga::e2<float>()
 		);
@@ -79,15 +79,15 @@ void App::computeImageGA() {
 			px.color().set(0.1f, 0.2f, 0.7f);
 		}
 		endCalc = std::chrono::system_clock::now();
-		Log::Release::Info("Conversion  took {}s", (endConv - startConv).count());
-		Log::Release::Info("Calculation took {}s", (endCalc - startCalc).count());
+		//Log::Release::Info("Conversion  took {}s", (endConv - startConv).count());
+		//Log::Release::Info("Calculation took {}s", (endCalc - startCalc).count());
 	}
 	// Put in the texture
 	m_textureGA.uploadRGBA(m_imageGA.width(), m_imageGA.height(), m_imageGA.data());
 }
 
 void App::computeImageLA() {
-	float sphereRadius = 2.f;
+	float sphereRadius = 2.5f;
 	glm::vec3 sphereCenter(0.f);
 	glm::vec3 lightDir = glm::vec3(0, -1, 0);
 	for (Pixel px : m_imageLA) {
