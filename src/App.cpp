@@ -132,7 +132,7 @@ void App::render() {
 		m_displayTextureShader.setUniform1i("u_TextureSlotGA", 0);
 		m_displayTextureShader.setUniform1i("u_TextureSlotLA", 1);
 		m_renderer.render();
-	m_renderer.end();
+	m_renderer.end(GL_NEAREST);
 }
 
 void App::ImGuiWindows() {
