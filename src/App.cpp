@@ -25,7 +25,8 @@ App::App()
 	startGA = std::chrono::system_clock::now();
 	computeImageGA();
 	endGA = std::chrono::system_clock::now();
-
+	//
+	RenderState::setExportSize(2 * m_imageGA.width(), m_imageGA.height());
 	// Benchmark
 	std::chrono::duration<double> elapsed_secondsGA = endGA - startGA;
 	std::chrono::duration<double> elapsed_secondsLA = endLA - startLA;
@@ -142,8 +143,10 @@ void App::ImGuiWindows() {
 		m_imageLA.saveAs("out/LA.png");
 	}
 	if (ImGui::Button("Compute Image")) {
+		RenderState::setExportSize(m_imageGA.width(), m_imageGA.height());
 		computeImageGA();
 		computeImageLA();
+		RenderState::setExportSize(2 * m_imageGA.width(), m_imageGA.height());
 	}
 	ImGui::Text("Camera Transform matrix :");
 	glm::mat4 m = m_camera.transformMatrix();
