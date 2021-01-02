@@ -25,3 +25,6 @@
 [submodule "Cool/Renderer_Fullscreen"]
 	path = Cool/Renderer_Fullscreen
 	url = https://github.com/CoolOpenGL/Renderer_Fullscreen
+[submodule "Cool/AspectRatio"]
+	path = Cool/AspectRatio
+	url = https://github.com/CoolOpenGL/AspectRatio
